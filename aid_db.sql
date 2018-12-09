@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 06, 2018 at 06:19 AM
+-- Generation Time: Dec 09, 2018 at 03:11 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 5.6.38
 
@@ -103,7 +103,11 @@ INSERT INTO `invoices` (`id`, `date`, `due_date`, `status`) VALUES
 (42, '2018-11-28 18:17:12', '2018-11-29 18:17:12', 'unpaid'),
 (43, '2018-11-28 18:19:09', '2018-11-29 18:19:09', 'unpaid'),
 (44, '2018-11-28 18:21:26', '2018-11-29 18:21:26', 'unpaid'),
-(45, '2018-11-28 21:05:21', '2018-11-29 21:05:21', 'unpaid');
+(45, '2018-11-28 21:05:21', '2018-11-29 21:05:21', 'unpaid'),
+(46, '2018-12-08 05:16:52', '2018-12-09 05:16:52', 'unpaid'),
+(47, '2018-12-08 05:17:37', '2018-12-09 05:17:37', 'unpaid'),
+(48, '2018-12-08 05:18:00', '2018-12-09 05:18:00', 'unpaid'),
+(49, '2018-12-08 05:22:44', '2018-12-09 05:22:44', 'unpaid');
 
 -- --------------------------------------------------------
 
@@ -146,7 +150,12 @@ INSERT INTO `orders` (`id`, `invoice_id`, `product_id`, `product_name`, `qty`, `
 (18, 43, 1, 'A Black Tshirt', 1, 35000, ''),
 (19, 44, 2, 'Sandal Casual', 1, 35000, ''),
 (20, 45, 2, 'Sandal Casual', 1, 35000, ''),
-(21, 45, 3, 'Topi', 1, 80000, '');
+(21, 45, 3, 'Topi', 1, 80000, ''),
+(22, 46, 3, 'Honor of Honorer T shirt', 1, 80000, ''),
+(23, 47, 3, 'Honor of Honorer T shirt', 1, 80000, ''),
+(24, 48, 3, 'Honor of Honorer T shirt', 1, 80000, ''),
+(25, 49, 3, 'Honor of Honorer T shirt', 1, 80000, ''),
+(26, 49, 4, 'A White Shirt', 1, 35000, '');
 
 -- --------------------------------------------------------
 
@@ -171,9 +180,9 @@ CREATE TABLE `products` (
 INSERT INTO `products` (`id`, `name`, `description`, `price`, `donated`, `stock`, `image`) VALUES
 (1, 'A Black Tshirt', 'Literally a black shirt, for daily uses, just dont use it when its 35 degrees outside', 35000, 10000, 5, '8.jpg'),
 (2, '&quot;Myolnir&quot; T Shirt', 'Myolnir, shaken by earthquake that hit palu, decided to design this shirt so that he can done some help ', 100000, 70000, 10, '6.jpg'),
-(3, 'Topi', 'Topi Casual', 80000, 20000, 12, '91qz+oNEDIL._SL1500__.jpg'),
-(4, 'Sepatu', 'Sepatu Kets', 240000, 20000, 1, 'Converse-Shoes.jpg'),
-(5, 'Dasi', 'Dasi Formal', 77500, 15000, 1, 'Platinum-Ties-Mens-Red-Power-Tie-Necktie-P14034714.jpg'),
+(3, 'Honor of Honorer T shirt', 'Setiap pembelian tshirt ini keuntungannya akan didonasikan untuk para guru honorer di pelosok indonesia ', 80000, 20000, 12, '11.jpg'),
+(4, 'A White Shirt', 'Literally, a White shirt, this time donation will go to homeless care', 35000, 10000, 1, '9.jpg'),
+(5, 'Blood Type Card', 'For accessories, or for fashion, but it&#39;s intended use is to tell people about your blood type while you&#39;re unconscious ', 15000, 5000, 1, '4.jpg'),
 (6, 'Indonesia Map Phone case', 'If You&#39;re true nationalist u need this case', 130000, 20000, 12, '1.jpg'),
 (7, 'COEXIST wall sticker', 'To repel all racist talk in your home, install this sticker, proven by sum niggas', 230000, 30000, 12, '2.jpg');
 
@@ -206,7 +215,9 @@ INSERT INTO `shipping_address` (`id`, `invoice_id`, `recipient_name`, `phone_num
 (6, 0, 'qwe', 'qwe', 'qwe', 'asd', 213),
 (7, 0, '', '', '', '', 0),
 (8, 0, 'qwe', 'qwe', 'qwe', 'qwe', 312),
-(9, 0, 'das', 'asd', 'asd                                        ', 'asd', 231);
+(9, 0, 'das', 'asd', 'asd                                        ', 'asd', 231),
+(10, 0, 'ira', 'aifj', 'jdlailjdalj                                            ', 'iruoeirfl', 2135),
+(11, 0, 'qe jiuio', 'lieui', '                                       fasufoiu     ', 'qu', 1234);
 
 -- --------------------------------------------------------
 
@@ -227,9 +238,9 @@ CREATE TABLE `toko_sessions` (
 --
 
 INSERT INTO `toko_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('43ef679ba0a4762f8e927ca6288363d4', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36', 1544073487, ''),
-('482673de07ce46613b955b7c427176de', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36', 1543470060, ''),
-('55f52b1de581cf2aef1b988b0df94286', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36', 1543460027, 'a:3:{s:9:\"user_data\";s:0:\"\";s:8:\"username\";s:5:\"admin\";s:5:\"group\";s:1:\"1\";}');
+('14d65635b5d6a8349e8c8ffe328218ed', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36', 1544240217, 'a:2:{s:9:\"user_data\";s:0:\"\";s:13:\"cart_contents\";a:3:{s:32:\"8f14e45fceea167a5a36dedd4bea2543\";a:6:{s:5:\"rowid\";s:32:\"8f14e45fceea167a5a36dedd4bea2543\";s:2:\"id\";s:1:\"7\";s:3:\"qty\";s:1:\"1\";s:5:\"price\";s:6:\"230000\";s:4:\"name\";s:20:\"COEXIST wall sticker\";s:8:\"subtotal\";i:230000;}s:11:\"total_items\";i:1;s:10:\"cart_total\";i:230000;}}'),
+('cda3735465bd4fff4ba175a3e7e6c36e', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.80 Safari/537.36', 1544364646, ''),
+('d83aea8179c4a71c253102ccc3f4520a', '::1', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36', 1544242702, 'a:2:{s:9:\"user_data\";s:0:\"\";s:13:\"cart_contents\";a:4:{s:32:\"eccbc87e4b5ce2fe28308fd9f2a7baf3\";a:6:{s:5:\"rowid\";s:32:\"eccbc87e4b5ce2fe28308fd9f2a7baf3\";s:2:\"id\";s:1:\"3\";s:3:\"qty\";s:1:\"1\";s:5:\"price\";s:5:\"80000\";s:4:\"name\";s:24:\"Honor of Honorer T shirt\";s:8:\"subtotal\";i:80000;}s:32:\"a87ff679a2f3e71d9181a67b7542122c\";a:6:{s:5:\"rowid\";s:32:\"a87ff679a2f3e71d9181a67b7542122c\";s:2:\"id\";s:1:\"4\";s:3:\"qty\";s:1:\"1\";s:5:\"price\";s:5:\"35000\";s:4:\"name\";s:13:\"A White Shirt\";s:8:\"subtotal\";i:35000;}s:11:\"total_items\";i:2;s:10:\"cart_total\";i:115000;}}');
 
 -- --------------------------------------------------------
 
@@ -313,13 +324,13 @@ ALTER TABLE `groups`
 -- AUTO_INCREMENT for table `invoices`
 --
 ALTER TABLE `invoices`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `products`
@@ -331,7 +342,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `shipping_address`
 --
 ALTER TABLE `shipping_address`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `users`
